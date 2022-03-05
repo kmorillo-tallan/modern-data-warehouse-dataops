@@ -27,6 +27,7 @@ resource keyvault 'Microsoft.KeyVault/vaults@2019-09-01' = {
       name: 'standard'
     }
     enabledForTemplateDeployment: true
+    enableSoftDelete: false
     tenantId: subscription().tenantId
     accessPolicies: [
       {

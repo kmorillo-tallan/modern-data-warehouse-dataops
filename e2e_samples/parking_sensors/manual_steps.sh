@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
+
+#TODO add these to init script with variables
+export AZURE_LOCATION="westus"
 export TENANT_ID="b7c4d562-d8f6-47ee-bab9-b9ee602bc6f0"
+export AZDO_PIPELINES_BRANCH_NAME="deploy1"
+
+echo $AZURE_LOCATION
 
 echo "Configure az devops cli"
 az devops configure --defaults organization="$AZDO_ORGANIZATION_URL" project="$AZDO_PROJECT"
@@ -26,7 +32,11 @@ az group list --output table
 
 echo
 
-AZURE_LOCATION=westus
+
+
+
+#git config --global user.email "kevin.morillo@tallan.com"
+#git config --global user.name "Kevin Morillo"
 
 ./deploy.sh
 
